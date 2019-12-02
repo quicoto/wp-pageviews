@@ -16,6 +16,9 @@
       body: data
     })
     .then((response) => {
+      // eslint-disable-next-line
+      debugger
+
       console.log('[WP Pageviews Plugin]');
       console.log('Pageview recorded');
 
