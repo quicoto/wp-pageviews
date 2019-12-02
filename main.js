@@ -15,15 +15,12 @@
       credentials: 'same-origin',
       body: data
     })
-    .then((resp) => resp.json())
-    .then(function(data) {
-      if(data.status == "success"){
-        console.log('[WP Pageviews Plugin]');
-        console.log('Pageview recorded');
+    .then((response) => {
+      console.log('[WP Pageviews Plugin]');
+      console.log('Pageview recorded');
 
-        if (response) {
-          $el.innerText = response;
-        }
+      if (response) {
+        $el.innerText = response;
       }
     })
     .catch((error) => {
