@@ -15,17 +15,16 @@
       credentials: 'same-origin',
       body: data
     })
-    .then((response) => {
+    .then((response) => resp.json())
+    .then((data) => {
       // eslint-disable-next-line no-console
-      console.log(response.json())
-      // eslint-disable-next-line
-      debugger
+      console.log(data);
 
       console.log('[WP Pageviews Plugin]');
       console.log('Pageview recorded');
 
-      if (response) {
-        $el.innerText = response;
+      if (data) {
+        $el.innerText = data;
       }
     })
     .catch((error) => {
