@@ -6,6 +6,6 @@ Store post/page pageviews
 
 ```
 <?php if (!is_user_logged_in()){ ?>
-  <span id="wp-pageviews"> views
+  <span id="wp-pageviews"></span> views
 <?php } ?>
 ```
