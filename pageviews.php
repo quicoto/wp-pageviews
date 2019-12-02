@@ -58,7 +58,7 @@ if  ( ! function_exists( 'wp_pageviews_count_pageview_callback' ) ){
     // Check the nonce - security
     check_ajax_referer( 'wp-pageviews-nonce', 'nonce' );
 
-    if (is_single() && !is_user_logged_in()){
+    if ($_POST['is_single'] && !$_POST['is_user_logged_in']){
       $post_ID = intval( $_POST['postid'] );
 
       $pv = intval(get_post_meta($post_ID, '_pageviews', true));
@@ -83,8 +83,13 @@ if  ( ! function_exists( 'wp_pageviews_scripts' ) ){
 
   function wp_pageviews_scripts() {
     if(is_single() && !is_user_logged_in()){
-      wp_enqueue_script('wp_pageviews_scripts', wp_pageviews_url . '/main.js', '', '1.0.8', true);
-      wp_localize_script( 'wp_pageviews_scripts', 'wp_pageviews_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'nonce' => wp_create_nonce( 'wp-pageviews-nonce' ) ) );
+      wp_enqueue_script('wp_pageviews_scripts', wp_pageviews_url . '/main.js', '', '1.0.9', true);
+      wp_localize_script( 'wp_pageviews_scripts', 'wp_pageviews_ajax', array(
+        'ajax_url' => admin_url( 'admin-ajax.php' ),
+        'nonce' => wp_create_nonce( 'wp-pageviews-nonce' ),
+        'is_user_logged_in' => is_user_logged_in(),
+        'is_single' => is_single()
+      ) );
     }
   }
 
