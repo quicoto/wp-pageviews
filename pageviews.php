@@ -71,9 +71,10 @@ if  ( ! function_exists( 'wp_pageviews_count_pageview_callback' ) ){
     }
   }
 
-  add_action( 'wp_ajax_wp_pageviews_add_pageview', 'wp_pageviews_count_pageview_callback' );
+  add_action('wp_ajax_wp_pageviews_add_pageview', 'wp_pageviews_count_pageview_callback');
   add_action('wp_ajax_nopriv_wp_pageviews_add_pageview', 'wp_pageviews_count_pageview_callback');
 
+  echo 'test-123';
 }
 
 /*-----------------------------------------------------------------------------------*/
