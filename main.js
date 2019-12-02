@@ -14,7 +14,7 @@
         "X-WP-Nonce": data.nonce
       },
       credentials: 'same-origin',
-      body: "action=wp_pageviews_add_pageview"
+      body: JSON.stringify(data)
     })
     .then((resp) => resp.json())
     .then(function(data) {
