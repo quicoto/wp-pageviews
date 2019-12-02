@@ -15,7 +15,7 @@
       credentials: 'same-origin',
       body: data
     })
-    .then((response) => resp.json())
+    .then((response) => response.json())
     .then((data) => {
       // eslint-disable-next-line no-console
       console.log(data);
