@@ -58,7 +58,7 @@ if  ( ! function_exists( 'wp_pageviews_count_pageview_callback' ) ){
     // Check the nonce - security
     check_ajax_referer( 'wp-pageviews-nonce', 'nonce' );
 
-    if(is_single() && !is_user_logged_in()){
+    if (is_single() && !is_user_logged_in()){
       global $post;
 
       $pv = intval(get_post_meta($post->ID, '_pageviews', true));
@@ -83,7 +83,7 @@ if  ( ! function_exists( 'wp_pageviews_scripts' ) ){
 
   function wp_pageviews_scripts() {
     if(is_single() && !is_user_logged_in()){
-      wp_enqueue_script('wp_pageviews_scripts', wp_pageviews_url . '/main.js', '', '1.0.2', true);
+      wp_enqueue_script('wp_pageviews_scripts', wp_pageviews_url . '/main.js', '', '1.0.3', true);
       wp_localize_script( 'wp_pageviews_scripts', 'wp_pageviews_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'nonce' => wp_create_nonce( 'wp-pageviews-nonce' ) ) );
     }
   }
