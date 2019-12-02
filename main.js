@@ -10,10 +10,11 @@
     fetch(wp_pageviews_ajax.ajax_url, {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/application/json",
+        "X-WP-Nonce": data.nonce
       },
       credentials: 'same-origin',
-      body: JSON.stringify(data),
+      body: "action=wp_pageviews_add_pageview"
     })
     .then((resp) => resp.json())
     .then(function(data) {
