@@ -16,6 +16,8 @@
       body: data
     })
     .then((response) => {
+      // eslint-disable-next-line no-console
+      console.log(response.json())
       // eslint-disable-next-line
       debugger
 
