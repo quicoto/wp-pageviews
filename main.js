@@ -17,12 +17,6 @@
     })
     .then((response) => response.json())
     .then((data) => {
-      // eslint-disable-next-line no-console
-      console.log(data);
-
-      console.log('[WP Pageviews Plugin]');
-      console.log('Pageview recorded');
-
       if (data) {
         $el.innerText = data;
       }
