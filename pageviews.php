@@ -67,8 +67,7 @@ if  ( ! function_exists( 'wp_pageviews_count_pageview_callback' ) ){
 
       update_post_meta($post->ID, '_pageviews', $newValue);
 
-      // die(number_format( $newValue , 0 , ",", "."));
-      die('test');
+      die(number_format( $newValue , 0 , ",", "."));
     }
   }
 
