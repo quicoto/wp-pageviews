@@ -56,7 +56,11 @@ if  ( ! function_exists( 'wp_pageviews_count_pageview_callback' ) ){
 
   function wp_pageviews_count_pageview_callback(){
     // Check the nonce - security
-    check_ajax_referer( 'wp-pageviews-nonce', 'nonce' );
+    // We can not have security check if the page is cached.
+    // RATIONALE: I would rather have this off and potentially let others add page views
+    // tha have no pageviews at all.
+    // Alternative solution is to lower the time the page is cached. But it defeats purpose.
+    // check_ajax_referer( 'wp-pageviews-nonce', 'nonce' );
 
     if ($_POST['is_single'] && !$_POST['is_user_logged_in']){
       $post_ID = intval( $_POST['postid'] );
