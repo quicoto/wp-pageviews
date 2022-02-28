@@ -17,10 +17,10 @@
       credentials: 'same-origin',
       body: data
     })
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((data) => {
       if (data) {
-        $totalStats.innerText =  formatter.format(data);
+        $totalStats.innerText =  formatter.format(data.page_views);
       }
     })
     .catch((error) => {
