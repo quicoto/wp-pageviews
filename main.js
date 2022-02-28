@@ -23,7 +23,10 @@
         const $totalStats = document.querySelector('.wp-pageviews-total-stats');
 
         if ($totalStats) {
-          $totalStats.innerText = +$totalStats.dataset.stats + 1;
+          const amount = +$totalStats.dataset.stats + 1;
+          const formatter = new Intl.NumberFormat('en-US');
+
+          $totalStats.innerText =  formatter.format(amount);
         }
       }
     })
