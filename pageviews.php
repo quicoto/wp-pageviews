@@ -78,9 +78,9 @@ if  ( ! function_exists( 'wp_pageviews_count_pageview_callback' ) ){
       // Return the total count
       $page_views = $wpdb->get_results( "SELECT SUM(meta_value) as total FROM wp_postmeta WHERE meta_key LIKE '_pageviews' LIMIT 0,1" );
 
-      $response = array ('page_views' => number_format($page_views[0]->total, 0, '.', ','));
+      $response = array('page_views' => number_format($page_views[0]->total, 0, '.', ','));
 
-      die(json_encode($arr));
+      die(json_encode($response));
     }
   }
 
