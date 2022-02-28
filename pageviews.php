@@ -10,7 +10,7 @@ Author URI: https://ricard.blog/
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-global $wpdb;
+require_once(ABSPATH . 'wp-settings.php');
 
 /*-----------------------------------------------------------------------------------*/
 /* Define the URL */
