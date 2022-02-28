@@ -3,7 +3,7 @@
 Plugin Name: WP Pageviews
 Plugin URI: https://php.quicoto.com/
 Description: Store post / page Pageviews
-Version: 2.0.1
+Version: 2.0.2
 Author: quicoto
 Author URI: https://ricard.blog/
 */
@@ -94,7 +94,7 @@ if  ( ! function_exists( 'wp_pageviews_scripts' ) ){
 
   function wp_pageviews_scripts() {
     if(is_single() && !is_user_logged_in()){
-      wp_enqueue_script('wp_pageviews_scripts', wp_pageviews_url . '/main.js', '', '2.0.1', true);
+      wp_enqueue_script('wp_pageviews_scripts', wp_pageviews_url . '/main.js', '', '2.0.2', true);
       wp_localize_script( 'wp_pageviews_scripts', 'wp_pageviews_ajax', array(
         'ajax_url' => admin_url( 'admin-ajax.php' ),
         'nonce' => wp_create_nonce( 'wp-pageviews-nonce' ),
