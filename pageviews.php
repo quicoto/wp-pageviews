@@ -3,7 +3,7 @@
 Plugin Name: WP Pageviews
 Plugin URI: https://php.quicoto.com/
 Description: Store post / page Pageviews
-Version: 1.0.0
+Version: 1.1.0
 Author: quicoto
 Author URI: https://ricard.blog/
 */
