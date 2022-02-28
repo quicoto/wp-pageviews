@@ -1,7 +1,6 @@
 (function () {
   const $el = document.getElementById('wp-pageviews');
   const $totalStats = document.querySelector('.wp-pageviews-total-stats');
-  const formatter = new Intl.NumberFormat('en-US');
 
   if ($totalStats && $el && $el.dataset.postid) {
     var data = new FormData();
@@ -20,7 +19,7 @@
     .then((response) => response.json())
     .then((data) => {
       if (data) {
-        $totalStats.innerText =  formatter.format(data.page_views);
+        $totalStats.innerText = data.page_views;
       }
     })
     .catch((error) => {
