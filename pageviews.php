@@ -10,7 +10,9 @@ Author URI: https://ricard.blog/
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-include(ABSPATH . 'wp-load.php');
+$path = $_SERVER['DOCUMENT_ROOT'];
+
+include_once $path . '/wp-load.php';
 
 global $wpdb;
 
