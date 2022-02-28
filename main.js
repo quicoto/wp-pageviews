@@ -17,7 +17,6 @@
       credentials: 'same-origin',
       body: data
     })
-    .then((response) => response.json())
     .then((data) => {
       if (data) {
         $totalStats.innerText =  formatter.format(data);
