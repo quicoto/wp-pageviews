@@ -12,6 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 require_once(ABSPATH . 'wp-settings.php');
 
+global $wpdb;
+
 /*-----------------------------------------------------------------------------------*/
 /* Define the URL */
 /*-----------------------------------------------------------------------------------*/
