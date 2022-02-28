@@ -1,7 +1,9 @@
 (function () {
   const $el = document.getElementById('wp-pageviews');
+  const $totalStats = document.querySelector('.wp-pageviews-total-stats');
+  const formatter = new Intl.NumberFormat('en-US');
 
-  if ($el && $el.dataset.postid) {
+  if ($totalStats && $el && $el.dataset.postid) {
     var data = new FormData();
 
     data.append( 'action', 'wp_pageviews_add_pageview' );
@@ -18,16 +20,7 @@
     .then((response) => response.json())
     .then((data) => {
       if (data) {
-        $el.innerText = data;
-
-        const $totalStats = document.querySelector('.wp-pageviews-total-stats');
-
-        if ($totalStats) {
-          const amount = +$totalStats.dataset.stats + 1;
-          const formatter = new Intl.NumberFormat('en-US');
-
-          $totalStats.innerText =  formatter.format(amount);
-        }
+        $totalStats.innerText =  formatter.format(data);
       }
     })
     .catch((error) => {
