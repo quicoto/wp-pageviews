@@ -12,10 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 $path = $_SERVER['DOCUMENT_ROOT'];
 
-include_once $path . '/wp-load.php';
-
-global $wpdb;
-
 /*-----------------------------------------------------------------------------------*/
 /* Define the URL */
 /*-----------------------------------------------------------------------------------*/
@@ -61,6 +57,8 @@ function wp_pageviews_display_pageviews_row($column_name, $post_id){
 if  ( ! function_exists( 'wp_pageviews_count_pageview_callback' ) ){
 
   function wp_pageviews_count_pageview_callback(){
+    global $wpdb;
+
     // Check the nonce - security
     // We can not have security check if the page is cached.
     // RATIONALE: I would rather have this off and potentially let others add page views
