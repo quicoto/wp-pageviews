@@ -19,6 +19,12 @@
     .then((data) => {
       if (data) {
         $el.innerText = data;
+
+        const $totalStats = document.querySelector('.wp-pageviews-total-stats');
+
+        if ($totalStats) {
+          $totalStats.innerText = +$totalStats.dataset.stats + 1;
+        }
       }
     })
     .catch((error) => {
